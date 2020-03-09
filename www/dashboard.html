@@ -1,0 +1,88 @@
+<html>
+
+<head>
+    <title>
+        Balochi Verb Conjugator
+    </title>
+    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap-grid.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap-reboot.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/material.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/googleApiFonts1.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/googleApiFonts2.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/keyboard.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/index.css" />
+    <script src="/assets/js/globals.js"></script>
+    <script src="/assets/js/material.js"></script>
+</head>
+
+<body class="bg-lighter-gray">
+    <div class="mdc-snackbar">
+        <div class="mdc-snackbar__surface">
+            <div id="snackbar-message" class="mdc-snackbar__label" role="status" aria-live="polite">
+                Can't send photo. Retry in 5 seconds.
+            </div>
+            <div class="mdc-snackbar__actions">
+                <button id="snackbar-action" type="button" class="mdc-button mdc-snackbar__action">close</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 px-4 py-2 bg-white d-flex justify-content-between">
+        <span class="text-primary fs-2r font-weight-bold">
+            BALOCHI VERB CONJUGATOR
+        </span>
+        <div class="col-2 px-4 py-2 bg-white d-flex justify-content-between">
+            <div id="userInitial" class="py-2">
+                <span class="vertical-align-middle text-primary">Welcome, {{username}}</span>
+            </div>
+            <button class="px-4 py-2 bg-primary text-white border-0 rounded mdc-ripple-surface" onclick="logout()">
+                Logout
+            </button>
+        </div>
+        <!-- <span class="text-primary fs-2r font-weight-bold">
+            بلوچی فعل کنوجیوٹر
+        </span> -->
+    </div>
+    <div class="col-12 h-100 w-100 row m-0 p-0">
+        <aside class="mdc-drawer col-2 p-0">
+            <div class="mdc-drawer__content sidebar-back">
+                <div class="col-12 pt-4 fs-0_8r">
+                    MENU
+                </div>
+                <nav class="mdc-list">
+                    <div class="tag tag-databases mdc-list-item mdc-list-item--activated" onclick="navigateTo('Databases')" aria-current="page">
+                        <span class="mdc-list-item__text fs-0_8r">Manage Databases</span>
+                    </div>
+                    <div id="expand-databases" class="col-12 expand-container overflow-hidden" style="height:0px">
+                        <div class="expand expand-databases px-2 py-0 mdc-list">
+                            <div class="text-white mdc-list-item m-0 py-0 text-expand" onclick="navigateTo('Verbs')">Verbs</div>
+                            <div class="text-white mdc-list-item m-0 py-0 text-expand" onclick="navigateTo('Nouns')">Nouns</div>
+                            <div class="text-white mdc-list-item m-0 py-0 text-expand" onclick="navigateTo('Tenses')">Tenses</div>
+                        </div>
+                    </div>
+                    <div class="tag tag-contributors mdc-list-item" onclick="navigateTo('Contributors')">
+                        <span class="mdc-list-item__text fs-0_8r">Manage Contributors</span>
+                    </div>
+                    <div class="tag tag-contributions mdc-list-item" onclick="navigateTo('Contributions')">
+                        <span class="mdc-list-item__text fs-0_8r">Manage Contributions</span>
+                    </div>
+                </nav>
+            </div>
+        </aside>
+        <div id="render-container" class="col-10 p-0">
+
+        </div>
+    </div>
+    <script src="/assets/js/jquery.js"></script>
+    <script src="/assets/js/jquery-validate.js"></script>
+    <script src="/assets/js/popper.js"></script>
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/keyboard.js"></script>
+    <script src="/assets/js/uk.js"></script>
+    <script src="/assets/js/vue.js"></script>
+    <script src="/assets/js/index.js"></script>
+    <script src="/assets/js/dashboard.js"></script>
+</body>
+
+</html>

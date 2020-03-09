@@ -1,0 +1,33 @@
+
+<svg width="21px" height="27px" viewBox="0 0 21 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Teachers" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="hover-1" transform="translate(-957.000000, -222.000000)">
+            <g id="modal" transform="translate(919.000000, 92.000000)">
+                <g id="use-existing-exam" transform="translate(25.000000, 118.628337)">
+                    <g id="icon">
+                        <g transform="translate(13.000000, 12.000000)">
+                            <g opacity="0.896065848" transform="translate(0.000000, 4.333333)">
+                                <polygon id="Path" fill="#0052eb" fill-rule="nonzero" points="16.2865142 5.0498326 16.2865142 21.3631882 0.0563429905 21.3631882 0.0563429905 0.0558593905 11.2925409 0.0558593905 12.6534784 3.76385787"></polygon>
+                                <polygon id="Path" fill="#0052eb" fill-rule="nonzero" points="11.2925409 5.0498326 16.2865142 5.0498326 11.2925409 0.0558593905"></polygon>
+                                <g id="Group-4" transform="translate(4.333333, 7.688775)" stroke="#B68109" stroke-linecap="square" stroke-width="0.866666667">
+                                    <path d="M0,0.433333333 L7.8,0.433333333" id="Line-6"></path>
+                                    <path d="M0,3.9 L7.8,3.9" id="Line-6-Copy"></path>
+                                    <path d="M0,7.36666667 L5.2,7.36666667" id="Line-6-Copy-2"></path>
+                                </g>
+                            </g>
+                            <g id="icon-copy" transform="translate(4.333333, 0.000000)">
+                                <polygon id="Path" fill="#60c2ff" fill-rule="nonzero" points="16.2865142 5.0498326 16.2865142 21.3631882 0.0563429905 21.3631882 0.0563429905 0.0558593905 11.2925409 0.0558593905 12.6534784 3.76385787"></polygon>
+                                <polygon id="Path" fill="#0052eb" fill-rule="nonzero" points="11.2925409 5.0498326 16.2865142 5.0498326 11.2925409 0.0558593905"></polygon>
+                                <g id="Group-4" transform="translate(4.333333, 7.688775)" stroke="#0052eb" stroke-linecap="square" stroke-width="0.866666667">
+                                    <path d="M0,0.433333333 L7.8,0.433333333" id="Line-6"></path>
+                                    <path d="M0,3.9 L7.8,3.9" id="Line-6-Copy"></path>
+                                    <path d="M0,7.36666667 L5.2,7.36666667" id="Line-6-Copy-2"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="51px" height="52px" viewBox="0 0 51 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.2 (81672) - https://sketch.com -->
+    <title>icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Teachers" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="add-question-modal-(brand-colors)" transform="translate(-255.000000, -1752.000000)">
+            <g id="modal" transform="translate(220.000000, 1313.000000)">
+                <g id="elements" transform="translate(35.000000, 35.000000)">
+                    <g id="drawing-canvas" transform="translate(0.000000, 404.628337)">
+                        <g id="icon">
+                            <circle id="Oval" fill="#0052EB" opacity="0.05143" cx="25.5" cy="25.5" r="25.5"></circle>
+                            <g id="whiteboard" transform="translate(14.000000, 13.371663)" fill-rule="nonzero">
+                                <g id="Group" transform="translate(4.464000, 0.000000)">
+                                    <polygon id="Path" fill="#FF5722" points="16.113375 23.808 18.417375 23.808 17.198625 16.512 14.894625 16.512"></polygon>
+                                    <path d="M2.31243749,1.92 L0.008437488,1.92 L0.232687488,0.330187488 C0.2595,0.141 0.421687488,8.8817842e-16 0.612937488,8.8817842e-16 L2.14125,8.8817842e-16 C2.37468749,8.8817842e-16 2.55393749,0.206625024 2.52131251,0.437812512 L2.31243749,1.92 Z" id="Path" fill="#0B58EA"></path>
+                                    <path d="M12.1835625,1.92 L14.4875625,1.92 L14.2633125,0.330187488 C14.2365,0.141 14.0743125,8.8817842e-16 13.8830625,8.8817842e-16 L12.35475,8.8817842e-16 C12.1213125,8.8817842e-16 11.9420625,0.206625024 11.9746875,0.437812512 L12.1835625,1.92 Z" id="Path" fill="#0B58EA"></path>
+                                </g>
+                                <polyline id="Path" fill="#C1D7FF" points="19.968 16.896 0.768 16.896 0.768 1.536 23.04 1.536 23.04 16.896 20.736 16.896"></polyline>
+                                <path d="M23.424,3.072 L0.384,3.072 C0.172125024,3.072 0,2.89987498 0,2.688 L0,1.92 C0,1.70812502 0.172125024,1.536 0.384,1.536 L23.424,1.536 C23.635875,1.536 23.808,1.70812502 23.808,1.92 L23.808,2.688 C23.808,2.89987498 23.635875,3.072 23.424,3.072 Z" id="Path" fill="#0B58EA"></path>
+                                <polygon id="Path" fill="#FF5722" points="3.23062502 23.808 0.926625024 23.808 2.14537498 16.512 4.44937498 16.512"></polygon>
+                                <polygon id="Path" fill="#0B58EA" points="7.296 15.36 2.688 15.36 2.688 14.224125 3.072 13.824 6.912 13.824 7.296 14.191875"></polygon>
+                                <path d="M20.736,15.36 L23.424,15.36 C23.635875,15.36 23.808,15.532125 23.808,15.744 L23.808,16.512 C23.808,16.723875 23.635875,16.896 23.424,16.896 L0.384,16.896 C0.172125024,16.896 0,16.723875 0,16.512 L0,15.744 C0,15.532125 0.172125024,15.36 0.384,15.36 L20.736,15.36 Z" id="Path" fill="#0B58EA"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

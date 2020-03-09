@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="51px" height="52px" viewBox="0 0 51 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.2 (81672) - https://sketch.com -->
+    <title>icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Teachers" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="add-question-modal-(brand-colors)" transform="translate(-255.000000, -1500.000000)">
+            <g id="modal" transform="translate(220.000000, 1313.000000)">
+                <g id="elements" transform="translate(35.000000, 35.000000)">
+                    <g id="image" transform="translate(0.000000, 152.628337)">
+                        <g id="icon">
+                            <circle id="Oval" fill="#0052EB" opacity="0.05143" cx="25.5" cy="25.5" r="25.5"></circle>
+                            <g id="google-drive-image" transform="translate(14.000000, 14.371663)">
+                                <path d="M22.95,20.4 L22.95,2.55 C22.95,1.1475 21.8025,0 20.4,0 L2.55,0 C1.1475,0 0,1.1475 0,2.55 L0,20.4 C0,21.8025 1.1475,22.95 2.55,22.95 L20.4,22.95 C21.8025,22.95 22.95,21.8025 22.95,20.4 Z" id="Shape" fill="#C1D7FF" fill-rule="nonzero"></path>
+                                <circle id="Oval" fill="#FF5722" cx="10" cy="10" r="3"></circle>
+                                <polygon id="Path" fill="#0B58EA" fill-rule="nonzero" points="7.0125 13.3875 10.2 17.2125 14.6625 11.475 20.4 19.125 2.55 19.125"></polygon>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

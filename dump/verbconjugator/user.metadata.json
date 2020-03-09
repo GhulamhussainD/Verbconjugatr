@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"verbconjugator.user"}],"uuid":"dee5ab47c28a4ee29c511a5447e9ed00"}

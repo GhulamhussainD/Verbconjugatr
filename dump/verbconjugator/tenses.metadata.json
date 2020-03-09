@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"verbconjugator.tenses"}],"uuid":"45449181f460450f88c88afc369c19ef"}

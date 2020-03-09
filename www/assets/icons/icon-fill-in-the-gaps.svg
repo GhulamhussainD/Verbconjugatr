@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="51px" height="52px" viewBox="0 0 51 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.2 (81672) - https://sketch.com -->
+    <title>icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Teachers" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="add-question-modal-(brand-colors)" transform="translate(-760.000000, -1499.000000)">
+            <g id="modal" transform="translate(220.000000, 1313.000000)">
+                <g id="questions" transform="translate(540.000000, 35.000000)">
+                    <g id="fill-in-the-gaps" transform="translate(0.000000, 151.628337)">
+                        <g id="icon">
+                            <circle id="Oval" fill="#0052EB" opacity="0.05143" cx="25.5" cy="25.5" r="25.5"></circle>
+                            <g transform="translate(13.000000, 13.000000)">
+                                <path d="M17.6424689,3.99830726 L20.9277442,7.29964095 L12.6118052,15.6563058 L9.32839247,12.3549721 L17.6424689,3.99830726 Z M7.60914215,16.9952624 C7.54935435,17.2656557 7.79229189,17.507942 8.06139805,17.4421847 L11.7222861,16.5502118 L8.43887341,13.2488781 L7.60914215,16.9952624 Z" id="Shape" fill="#0B58EA" fill-rule="nonzero"></path>
+                                <g id="Group-2" transform="translate(0.000000, 0.617500)">
+                                    <path d="M23.4206328,2.58460127 L21.9555264,1.11231979 C21.3893133,0.543333834 20.4699004,0.543333834 19.9017636,1.11231979 L18.4983382,2.52261822 L21.7836136,5.8239826 L23.4206328,4.17894639 C23.8597891,3.73760868 23.8597891,3.02590829 23.4206328,2.58460127 Z" id="Path" fill="#FF5722" fill-rule="nonzero"></path>
+                                    <path d="M0.34140625,23.4623661 L5.18915163,23.4623661" id="Line" stroke="#C1D7FF" stroke-width="2.85" stroke-linecap="round"></path>
+                                    <path d="M9.08140625,23.4623661 L13.9291516,23.4623661" id="Line-Copy-3" stroke="#FF5722" stroke-width="2.85" stroke-linecap="round"></path>
+                                    <path d="M17.376113,23.4623661 L26.1544867,23.4623661" id="Line-Copy-4" stroke="#C1D7FF" stroke-width="2.85" stroke-linecap="round"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

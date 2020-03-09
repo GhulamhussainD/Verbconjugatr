@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="33px" height="21px" viewBox="0 0 33 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.2 (81672) - https://sketch.com -->
+    <title>icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Teachers" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="add-question-modal-(brand-colors)" transform="translate(-338.000000, -2047.000000)" fill-rule="nonzero">
+            <g id="modal" transform="translate(220.000000, 1313.000000)">
+                <g id="upload" transform="translate(0.000000, 697.000000)">
+                    <g id="upload-pdf/doc/docx-file" transform="translate(118.000000, 37.000000)">
+                        <g id="icon">
+                            <path d="M26.93056,8.979008 C30.154368,8.979008 32.767936,11.591744 32.767936,14.815616 C32.767936,18.039488 30.154368,20.652992 26.93056,20.652992 L7.510784,20.652992 C3.362496,20.652992 0,17.289664 0,13.141376 C0,8.993088 3.362496,5.62976 7.510784,5.62976 C8.280128,5.62976 9.022016,5.745728 9.720064,5.960384 C9.695808,5.752768 9.681664,5.542016 9.681664,5.328128 C9.681664,2.385536 12.0672,0 15.009024,0 C17.852864,0 20.175808,2.227328 20.328576,5.032768 C21.00544,4.422464 21.90016,4.051136 22.88256,4.051136 C24.990016,4.051136 26.69792,5.75904 26.69792,7.866496 C26.69792,8.259008 26.6384,8.637376 26.527936,8.993856 C26.661056,8.98528 26.795072,8.979008 26.93056,8.979008 Z" id="Path" fill="#C1D7FF"></path>
+                            <g id="Group" transform="translate(13.064000, 7.216000)" fill="#FF5722">
+                                <polygon id="Path" points="3.50272 0 7.006272 4.561216 5.217664 4.561216 5.217664 8.396864 1.788608 8.396864 1.788608 4.561216 0 4.561216"></polygon>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

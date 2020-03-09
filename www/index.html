@@ -1,0 +1,194 @@
+<html>
+
+<head>
+    <title>
+        Balochi Verb Conjugator
+    </title>
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-grid.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-reboot.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/material.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/keyboard.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="/assets/css/materialize.css" /> -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/googleApiFonts1.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/googleApiFonts2.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/index.css" />
+    <script src="/assets/js/globals.js"></script>
+    <script src="/assets/js/material.js"></script>
+</head>
+
+<body class="bg-lighter-gray">
+    <div class="mdc-snackbar">
+        <div class="mdc-snackbar__surface">
+            <div id="snackbar-message" class="mdc-snackbar__label" role="status" aria-live="polite">
+                Can't send photo. Retry in 5 seconds.
+            </div>
+            <div class="mdc-snackbar__actions">
+                <button id="snackbar-action" type="button" class="mdc-button mdc-snackbar__action">close</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 px-4 py-2 bg-white d-flex justify-content-between">
+        <span class="text-primary fs-2r font-weight-bold">
+            BALOCHI VERB CONJUGATOR
+        </span>
+        <span class="text-primary fs-2r font-weight-bold">
+            بلوچی فعل کنوجیوٹر
+        </span>
+    </div>
+    <div class="col-12 px-4 py-2 bg-white d-flex justify-content-end">
+        <button class="px-4 py-2 fs-2r bg-primary text-white border-0 rounded mdc-ripple-surface" onclick="login()">
+            Login
+        </button>
+    </div>
+    <br>
+    <br>
+    <br>
+    <!-- <div class="col-12 py-5 my-5 d-flex justify-content-center d-flex justify-content-center">
+        <div class="col-6 px-2 py-5 my-5 d-flex flex-row justify-content-center d-flex">
+            <input required class="kb col-10 rounded p-2 border-light-gray fs-0_8r" placeholder="Search" id="search-verb" dir="rtl" autocomplete="off" />
+        </div>
+        
+    </div> -->
+    <div class="dashboard-wrapper m-0">
+        <div class="container-fluid dashboard-content" style="margin-right:25%;">
+            <div class="d-flex justify-content-center row m-0">
+                <div class="col-6">
+                    <div class="input-group md-form form-sm form-2 pl-0">
+                        <input class="form-control my-0 py-1 red-border keyboardInput rounded px-5 py-2 fs-2_5r" type="text" dir="rtl" placeholder="Search" aria-label="Search" id="search-verb">
+                        <button class="ml-4 px-5 fs-2r py-2 mdc-ripple-surface input-group-text red lighten-3 bg-primary text-white" id="basic-text1"><b
+                                class="text-grey" aria-hidden="true" onclick="conjugateNow()">Conjugate</b></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="verbs-table" class="col-12 d-none">
+        <div id="conjugated" class="col-12">
+            <div v-if="tables" class="col-12 py-2 text-center fs-2r">
+                {{openedExam}}
+            </div>
+            <div v-for="(t, index) of tables" class="p-3 col-4 d-inline-block vertical-align-top">
+                <table class="tableClass m-0 col-12 p-0 w-100">
+                    <tr>
+                        <th colspan="3" style="text-align: center;" class="bg-dark text-white">{{t}}</th>
+                    </tr>
+                    <tr>
+                        <th class="black-border text-center">کارال</th>
+                        <th class="black-border text-center">کارگال</th>
+                        <th class="black-border text-center">کمکارگال</th>
+                    </tr>
+                    <tr v-for="(f, fIndex) of values[index]" class="black-border text-center">
+                        <td class="black-border text-center">{{f.object}}</td>
+                        <td class="black-border text-center">{{f.form}}</td>
+                        <td class="black-border text-center">{{f.subject}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div id="ContributeVerb" class="modal fade hide">
+        <div class="col-12 d-flex justify-content-center p-0">
+            <div class="col-4 modal-dialog bg-white p-0 rounded shadow">
+                <div class="modal-content">
+                    <div class="p-3 border-bottom border-light-gray d-flex justify-content-between">
+                        <span>Add Contribution</span>
+                        <i class="mdc-ripple-surface material-icons cursor-pointer" onclick="hideModal('ContributeVerb')">clear</i>
+                    </div>
+                    <form id="verbsAddFormContrib" class="p-2">
+                        <div class="col-12 p-0 border-bottom border-secondary py-2">
+                            <div class="col-12 px-2 py-1 d-flex flex-row justify-content-center d-flex flex-column">
+                                <span class="py-1 font-weight-semibold fs-0_8r">Email</span>
+                                <input required class="not-urdu col-12 rounded p-2 border-light-gray fs-0_8r" placeholder="" id="contrib-Email" autocomplete="off" />
+                            </div>
+                            <div class="col-12 px-2 py-1 d-flex flex-row justify-content-center d-flex flex-column">
+                                <span class="py-1 font-weight-semibold fs-0_8r">Password</span>
+                                <input type="password" required class="not-urdu col-12 rounded p-2 border-light-gray fs-0_8r" placeholder="" id="contrib-Password" autocomplete="off" />
+                            </div>
+                            <div class="col-12 px-2 py-1 d-flex flex-row justify-content-center d-flex flex-column">
+                                <span class="py-1 font-weight-semibold fs-0_8r">Phone-number</span>
+                                <input type="tel" required class="not-urdu col-12 rounded p-2 border-light-gray fs-0_8r" placeholder="" id="contrib-Phone-number" autocomplete="off" />
+                            </div>
+                        </div>
+                        <div class="col-12 p-0">
+                            <div class="col-12 px-2 py-1 d-flex flex-row justify-content-center d-flex flex-column">
+                                <span class="py-1 font-weight-semibold fs-0_8r">Verb</span>
+                                <input required class=" col-12 rounded p-2 border-light-gray fs-0_8r" placeholder="" id="contrib-Verb" autocomplete="off" onkeyup="setToOthers(this)" />
+                            </div>
+                            <div class="col-12 px-2 py-1 d-flex flex-row justify-content-center d-flex flex-column">
+                                <span class="py-1 font-weight-semibold fs-0_8r">Meaning</span>
+                                <input required class="not-urdu col-12 rounded p-2 border-light-gray fs-0_8r" placeholder="" id="contrib-Meaning" autocomplete="off" />
+                            </div>
+                            <div class="col-12 px-2 py-1 d-flex flex-row justify-content-center d-flex flex-column">
+                                <span class="py-1 font-weight-semibold fs-0_8r">Roman Meaning</span>
+                                <input required class="not-urdu col-12 rounded p-2 border-light-gray fs-0_8r" placeholder="" id="contrib-RomanMeaning" autocomplete="off" />
+                            </div>
+                            <div class="col-12 px-2 py-1 d-flex flex-row justify-content-center d-flex flex-column">
+                                <span class="py-1 font-weight-semibold fs-0_8r">Type</span>
+                                <select required class=" col-12 rounded p-2 border-light-gray fs-0_8r" placeholder="" id="contrib-Type" autocomplete="off">
+                                    <option value="regular">Regular</option>
+                                    <option value="irregular">Irregular</option>
+                                </select>
+                                <!-- <input required class=" col-12 rounded p-2 border-light-gray fs-0_8r" placeholder="" id="contrib-Type" autocomplete="off" /> -->
+                            </div>
+                            <div v-for="(t) in tenses" class="col-12 px-2 py-1 d-flex flex-row justify-content-center d-flex flex-column">
+                                <div v-if="testIC(t)" class="col-12 pt-3 px-0 fs-1-2r font-weight-bolder border-top">
+                                    {{t.name}}
+                                </div>
+                                <!-- <div class="d-block">
+                                    <span class="d-inline py-1 font-weight-bolder">{{t.subject}}</span> &nbsp;<span class="d-inline  fs-0_8r">({{t.name}})</span>
+                                </div>
+                                <input v-model="t.form" required class="contrib-verb-tense-input col-12 rounded p-2 border-light-gray fs-0_8r" placeholder="" v-bind:id="'contrib-' + t.name + t.subject" autocomplete="off" /> -->
+                                <div class="col-12 row m-0 px-0 pt-2">
+                                    <div class="col-4 pl-0 pr-3 small font-weight-bold">Subject</div>
+                                    <div class="col-4 pl-0 pr-3 small font-weight-bold">Verb Form</div>
+                                    <div class="col-4 pl-0 pr-3 small font-weight-bold">Object</div>
+                                </div>
+                                <div class="col-12 row m-0 p-0">
+                                    <div class="col-4 pl-0 pr-3">
+                                        <input v-model="t.subject" class="add-verb-tense-input-subject col-12 rounded p-2 border-light-gray fs-0_8r" placeholder="" v-bind:id="'add-' +t.name + t.subject" autocomplete="off" />
+                                    </div>
+                                    <div class="col-4 pl-0 pr-3">
+                                        <input v-model="t.form" class="add-verb-tense-input-form col-12 rounded p-2 border-light-gray fs-0_8r" placeholder="" v-bind:id="'add-' +t.name + t.form" autocomplete="off" />
+                                    </div>
+                                    <div class="col-4 pl-0 pr-3">
+                                        <input v-model="t.object" class="add-verb-tense-input-object col-12 rounded p-2 border-light-gray fs-0_8r" placeholder="" v-bind:id="'add-' +t.name + t.object" autocomplete="off" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="p-2">
+                            <button class="border-0 px-3 py-2 mdc-ripple-surface" onclick="verbsObj.addVerbRow()">
+                                Add Row
+                            </button>
+                        </div> -->
+                    </form>
+                    <div class="p-3 border-bottom border-light-gray d-flex justify-content-end">
+                        <button class="border-0 px-3 py-2 mdc-ripple-surface mx-1" onclick="hideModal('ContributeVerb')">
+                            Cancel
+                        </button>
+                        <button class="border-0 bg-success text-white px-3 py-2 mdc-ripple-surface" onclick="saveVerbs()">
+                            Add
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 d-flex justify-content-center py-4">
+        <button id="contrib-button-container" class="d-none mdc-ripple-surface bg-primary rounded text-white px-5 py-2 fs-2r border-0" data-toggle="modal" data-target="ContributeVerb" onclick="triggerModal('ContributeVerb')">
+            Contribute
+        </button>
+    </div>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/jquery-validate.js"></script>
+    <script src="assets/js/popper.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/keyboard.js"></script>
+    <script src="assets/js/uk.js"></script>
+    <script src="assets/js/index.js"></script>
+    <script src="assets/js/vue.js"></script>
+</body>
+
+</html>

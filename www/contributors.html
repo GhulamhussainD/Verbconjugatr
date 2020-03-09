@@ -1,0 +1,300 @@
+<div class="col-12 d-flex justify-content-between px-4 py-3">
+    <div class="fs-2r text-secondary">
+        Manage <span class="font-weight-bold">Contributors</span>
+    </div>
+    <button id="add-butor-manual-button" class='bg-success fs-0_8r px-4 py-1 text-white border-0 rounded mdc-ripple-surface' data-toggle="modal" onclick="navigateTo('AddButorManual')">
+        Add New Contributor
+    </button>
+</div>
+<div class="col-12 row m-0 p-0">
+    <div class="col-6 p-0">
+        <div class="col-12 p-3 text-white font-weight-bold bg-primary">
+            Contributors
+        </div>
+        <div class="col-12">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th class="fs-0_8r text-secondary font-weight-bolder">S.No</th>
+                        <th class="fs-0_8r text-secondary font-weight-bolder">Email</th>
+                        <th class="fs-0_8r text-secondary font-weight-bolder">Phone</th>
+                        <th class="fs-0_8r text-secondary font-weight-bolder">Roles</th>
+                    </tr>
+                </thead>
+                <tbody id="butor-list">
+                    <tr v-for="(v, index) in butors" class="lh-1_5r bg-transparent fs-0_8r py-0">
+                        <td v-if="index%2 == 0" class=" border-bottom border-secondary font-weight-semibold">
+                            {{ index + 1 }}
+                        </td>
+                        <td v-if="index%2 == 0" class=" border-bottom border-secondary font-weight-semibold">
+                            
+                            {{ v.email }}
+                        </td>
+                        <td v-if="index%2 == 0" class=" border-bottom border-secondary font-weight-semibold">
+                            {{ v.phoneNumber }}
+                        </td>
+                        <td v-if="index%2 == 0" class=" border-bottom border-secondary font-weight-semibold">
+                            {{ butor.getReadableRoles(v.roles) }}
+                        </td>
+                        <td v-if="index%2 != 0" class="bg-verb-even border-bottom border-secondary font-weight-semibold">
+                            {{ index + 1 }}
+                        </td>
+                        <td v-if="index%2 != 0" class="bg-verb-even border-bottom border-secondary font-weight-semibold">
+                            {{ v.email }}
+                        </td>
+                        <td v-if="index%2 != 0" class="bg-verb-even border-bottom border-secondary font-weight-semibold">
+                            {{ v.phoneNumber }}
+                        </td>
+                        <td v-if="index%2 != 0" class="bg-verb-even border-bottom border-secondary font-weight-semibold">
+                            {{ butor.getReadableRoles(v.roles) }}
+                        </td>
+                        <td v-if="index%2 == 0" class=" border-bottom border-secondary">
+                            <i v-if="testUpdate()" class="mdc-ripple-surface material-icons text-secondary px-2 cursor-pointer" data-toggle="tooltip" Title="View" @click="navigateToWithData('EditButor', v)">edit</i>
+                            <i v-if="testRead()" class="mdc-ripple-surface material-icons text-secondary px-2 cursor-pointer" data-toggle="tooltip" Title="Delete" @click="navigateToWithData('DeleteButor', v)">delete</i>
+                        </td>
+                        <td v-if="index%2 != 0" class="bg-verb-even  border-bottom border-secondary">
+                            <i v-if="testUpdate()" class="mdc-ripple-surface material-icons text-secondary px-2 cursor-pointer" data-toggle="tooltip" Title="View" @click="navigateToWithData('EditButor', v)">edit</i>
+                            <i v-if="testRead()" class="mdc-ripple-surface material-icons text-secondary px-2 cursor-pointer" data-toggle="tooltip" Title="Delete" @click="navigateToWithData('DeleteButor', v)">delete</i>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-6 p-0 border-dark border-right-0 border-bottom-0 border-top-0 border-radius-none">
+        <div class="col-12 p-3 text-white font-weight-bold bg-secondary">
+            Recommended
+        </div>
+        <div class="col-12">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th class="fs-0_8r text-secondary font-weight-bolder">S.No</th>
+                        <th class="fs-0_8r text-secondary font-weight-bolder">Email</th>
+                        <th class="fs-0_8r text-secondary font-weight-bolder">Phone#</th>
+                        <th class="fs-0_8r text-secondary font-weight-bolder">Verb Added</th>
+                        <th class="fs-0_8r text-secondary font-weight-bolder">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="unbutor-list">
+                    <tr v-for="(v, index) in butors" class="lh-1_5r bg-transparent fs-0_8r py-0">
+                        <td v-if="index%2 == 0" class=" border-bottom border-secondary font-weight-semibold">
+                            {{ index + 1 }}
+                        </td>
+                        <td v-if="index%2 == 0" class=" border-bottom border-secondary font-weight-semibold">
+                            {{ v.user.email }}
+                        </td>
+                        <td v-if="index%2 == 0" class=" border-bottom border-secondary font-weight-semibold">
+                            {{ v.user.phoneNumber }}
+                        </td>
+                        <td v-if="index%2 == 0" class=" border-bottom border-secondary font-weight-semibold">
+                            {{ v.verb.verb }}
+                        </td>
+                        <td v-if="index%2 != 0" class="bg-verb-even border-bottom border-secondary font-weight-semibold">
+                            {{ index + 1 }}
+                        </td>
+                        <td v-if="index%2 != 0" class="bg-verb-even border-bottom border-secondary font-weight-semibold">
+                            {{ v.user.email }}
+                        </td>
+                        <td v-if="index%2 != 0" class="bg-verb-even border-bottom border-secondary font-weight-semibold">
+                            {{ v.user.phoneNumber }}
+                        </td>
+                        <td v-if="index%2 != 0" class="bg-verb-even border-bottom border-secondary font-weight-semibold">
+                            {{ v.verb.verb }}
+                        </td>
+                        <td v-if="index%2 == 0" class=" border-bottom border-secondary">
+                            <i v-if="testWrite()" class="mdc-ripple-surface material-icons text-secondary px-2 cursor-pointer" data-toggle="tooltip" Title="add" @click="navigateToWithData('AddButor', v)">add</i>
+                            <!-- <i class="mdc-ripple-surface material-icons text-secondary px-2 cursor-pointer" data-toggle="tooltip" Title="Delete" @click="navigateToWithData('DeleteButor', v)">delete</i> -->
+                        </td>
+                        <td v-if="index%2 != 0" class="bg-verb-even  border-bottom border-secondary">
+                            <i v-if="testWrite()" class="mdc-ripple-surface material-icons text-secondary px-2 cursor-pointer" data-toggle="tooltip" Title="add" @click="navigateToWithData('AddButor', v)">add</i>
+                            <!-- <i class="mdc-ripple-surface material-icons text-secondary px-2 cursor-pointer" data-toggle="tooltip" Title="Delete" @click="navigateToWithData('DeleteButor', v)">delete</i> -->
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div id="AddButorManual" class="modal fade hide">
+    <div class="col-12 d-flex justify-content-center py-5">
+        <div class="col-7 modal-dialog bg-white p-0 rounded shadow">
+            <div class="modal-content">
+                <div class="p-3 border-bottom border-light-gray d-flex justify-content-between">
+                    <span>Add Contributor</span>
+                    <i class="mdc-ripple-surface material-icons cursor-pointer" onclick="hideModal('AddButor')">clear</i>
+                </div>
+                <form id="butorAddForm" class="p-2">
+                    <div class="col-12 px-2 py-1 d-flex flex-row justify-content-center d-flex flex-column">
+                        <span class="py-1 font-weight-semibold fs-0_8r">Name</span>
+                        
+                        <input v-model="butors.user.email"  required  class="not-urdu col-12 rounded p-2 border-light-gray fs-0_8r" placeholder="" id="butor-Add-Manual-Name" autocomplete="off" />
+                    </div>
+                    <div class="col-12 px-2 py-1 d-flex flex-row justify-content-center d-flex flex-column">
+                        <span class="py-1 font-weight-semibold fs-0_8r">Phone#</span>
+                        <input v-model="butors.user.phoneNumber" required class="not-urdu col-12 rounded p-2 border-light-gray fs-0_8r" placeholder="" id="butor-Add-Manual-Phone" autocomplete="off" />
+                    </div>
+                    <div class="col-12 px-2 py-1 d-flex flex-row justify-content-center d-flex flex-column">
+                        <span class="py-1 font-weight-semibold fs-0_8r">Password</span>
+                        <input v-model="butors.user.password" type="password" required class="not-urdu col-12 rounded p-2 border-light-gray fs-0_8r" placeholder="" id="butor-Add-Manual-Password" autocomplete="off" />
+                    </div>
+                    <div class="col-12 px-1 font-weight-bold pt-2">
+                        Roles
+                    </div>
+                    <div class="col-12 px-2 py-1 d-flex flex-row justify-content-center d-flex justify-content-between">
+                        <div class="col-4 px-2">
+                            <span class="py-1 font-weight-semibold fs-0_8r vertical-align-middle">Delete</span>
+                            <input v-model="butors.user.roles.r" type="checkbox" class="vertical-align-middle ml-1 rounded p-2 border-light-gray fs-0_8r" placeholder="" id="butor-Add-Manual-Role-Read" autocomplete="off" />
+                        </div>
+                        <div class="col-4 px-2">
+                            <span class="py-1 font-weight-semibold fs-0_8r vertical-align-middle">Write</span>
+                            <input v-model="butors.user.roles.w" type="checkbox" class="vertical-align-middle ml-1 rounded p-2 border-light-gray fs-0_8r" placeholder="" id="butor-Add-Manual-Role-Write" autocomplete="off" />
+                        </div>
+                        <div class="col-4 px-2">
+                            <span class="py-1 font-weight-semibold fs-0_8r vertical-align-middle">Update</span>
+                            <input v-model="butors.user.roles.u" type="checkbox" class="vertical-align-middle ml-1 rounded p-2 border-light-gray fs-0_8r" placeholder="" id="butor-Add-Manual-Role-Update" autocomplete="off" />
+                        </div>
+                    </div>
+                </form>
+                <div class="p-3 border-bottom border-light-gray d-flex justify-content-end">
+                    <button class="border-0 px-3 py-2 mdc-ripple-surface mx-1" onclick="hideModal('AddButor')">
+                        Cancel
+                    </button>
+                    <button class="border-0 bg-success text-white px-3 py-2 mdc-ripple-surface" onclick="butor.save()">
+                        Add
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="AddButor" class="modal fade hide">
+    <div class="col-12 d-flex justify-content-center py-5">
+        <div class="col-7 modal-dialog bg-white p-0 rounded shadow">
+            <div class="modal-content">
+                <div class="p-3 border-bottom border-light-gray d-flex justify-content-between">
+                    <span>Add Recommended Contributor</span>
+                    <i class="mdc-ripple-surface material-icons cursor-pointer" onclick="hideModal('AddButor')">clear</i>
+                </div>
+                <!-- <form id="butorAddForm" class="p-2">
+                    <div class="col-12 px-2 py-1 d-flex flex-row justify-content-center d-flex flex-column">
+                        <span class="py-1 font-weight-semibold fs-0_8r">Name</span>
+                        <input v-model="butors.user.email" required class="not-urdu col-12 rounded p-2 border-light-gray fs-0_8r" placeholder="" id="butor-Add-Name" autocomplete="off" />
+                    </div>
+                    <div class="col-12 px-2 py-1 d-flex flex-row justify-content-center d-flex flex-column">
+                        <span class="py-1 font-weight-semibold fs-0_8r">Phone#</span>
+                        <input v-model="butors.user.phoneNumber" required class="not-urdu col-12 rounded p-2 border-light-gray fs-0_8r" placeholder="" id="butor-Add-Phone" autocomplete="off" />
+                    </div>
+                    <div class="col-12 px-2 py-1 d-flex flex-row justify-content-center d-flex flex-column">
+                        <span class="py-1 font-weight-semibold fs-0_8r">Password</span>
+                        <input v-model="butors.user.password" type="password" required class="not-urdu col-12 rounded p-2 border-light-gray fs-0_8r" placeholder="" id="butor-Add-Password" autocomplete="off" />
+                    </div>
+                    <div class="col-12 px-1 font-weight-bold pt-2">
+                        Roles
+                    </div>
+                    <div class="col-12 px-2 py-1 d-flex flex-row justify-content-center d-flex justify-content-between">
+                        <div class="col-4 px-2">
+                            <span class="py-1 font-weight-semibold fs-0_8r vertical-align-middle">Delete</span>
+                            <input v-model="butors.user.roles.r" type="checkbox" class="vertical-align-middle ml-1 rounded p-2 border-light-gray fs-0_8r" placeholder="" id="butor-Add-Role-Read" autocomplete="off" />
+                        </div>
+                        <div class="col-4 px-2">
+                            <span class="py-1 font-weight-semibold fs-0_8r vertical-align-middle">Write</span>
+                            <input v-model="butors.user.roles.w" type="checkbox" class="vertical-align-middle ml-1 rounded p-2 border-light-gray fs-0_8r" placeholder="" id="butor-Add-Role-Write" autocomplete="off" />
+                        </div>
+                        <div class="col-4 px-2">
+                            <span class="py-1 font-weight-semibold fs-0_8r vertical-align-middle">Update</span>
+                            <input v-model="butors.user.roles.u" type="checkbox" class="vertical-align-middle ml-1 rounded p-2 border-light-gray fs-0_8r" placeholder="" id="butor-Add-Role-Update" autocomplete="off" />
+                        </div>
+                    </div>
+                </form> -->
+                <div class="p-3 border-bottom border-light-gray d-flex justify-content-end">
+                    <button class="border-0 px-3 py-2 mdc-ripple-surface mx-1" onclick="hideModal('AddButor')">
+                        Cancel
+                    </button>
+                    <button class="border-0 bg-success text-white px-3 py-2 mdc-ripple-surface" onclick="butor.save()">
+                        Add
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="EditButor" class="modal fade hide">
+    <div class="col-12 d-flex justify-content-center py-5">
+        <div class="col-7 modal-dialog bg-white p-0 rounded shadow">
+            <div class="modal-content">
+                <div class="p-3 border-bottom border-light-gray d-flex justify-content-between">
+                    <span>Edit Contributor</span>
+                    <i class="mdc-ripple-surface material-icons cursor-pointer" onclick="hideModal('EditButor')">clear</i>
+                </div>
+                <form id="butorEditForm" class="p-2">
+                    <div class="col-12 px-2 py-1 d-flex flex-row justify-content-center d-flex flex-column">
+                        <span class="py-1 font-weight-semibold fs-0_8r">Name</span>
+                        <input v-model="butors.email" required class="not-urdu col-12 rounded p-2 border-light-gray fs-0_8r" placeholder="" id="butor-Edit-Name" autocomplete="off" />
+                    </div>
+                    <div class="col-12 px-2 py-1 d-flex flex-row justify-content-center d-flex flex-column">
+                        <span class="py-1 font-weight-semibold fs-0_8r">Phone</span>
+                        <input v-model="butors.phoneNumber" required class="not-urdu col-12 rounded p-2 border-light-gray fs-0_8r" placeholder="" id="butor-Edit-Phone" autocomplete="off" />
+                    </div>
+                    <div class="col-12 px-2 py-1 d-flex flex-row justify-content-center d-flex flex-column">
+                        <span class="py-1 font-weight-semibold fs-0_8r">Password</span>
+                        <input v-model="butors.password" type="password" required class="not-urdu col-12 rounded p-2 border-light-gray fs-0_8r" placeholder="" id="butor-Edit-Password" autocomplete="off" />
+                    </div>
+                    <div class="col-12 px-1 font-weight-bold pt-2">
+                        Roles
+                    </div>
+                    <div class="col-12 px-2 py-1 d-flex flex-row justify-content-center d-flex justify-content-between">
+                        <div class="col-4 px-2">
+                            <span class="py-1 font-weight-semibold fs-0_8r vertical-align-middle">Delete</span>
+                            <!-- checked="{{butors.roles.r}}" -->
+                            <input v-model="butors.roles.read" type="checkbox" class="vertical-align-middle ml-1 rounded p-2 border-light-gray fs-0_8r" placeholder="" id="butor-Edit-Role-Read" autocomplete="off" />
+                        </div>
+                        <div class="col-4 px-2">
+                            <span class="py-1 font-weight-semibold fs-0_8r vertical-align-middle">Write</span>
+                            <!-- checked="{{butors.roles.w}}" -->
+                            <input v-model="butors.roles.write" type="checkbox" class="vertical-align-middle ml-1 rounded p-2 border-light-gray fs-0_8r" placeholder="" id="butor-Edit-Role-Write" autocomplete="off" />
+                        </div>
+                        <div class="col-4 px-2">
+                            <span class="py-1 font-weight-semibold fs-0_8r vertical-align-middle">Update</span>
+                            <!-- checked="{{butors.roles.u}}" -->
+                            <input v-model="butors.roles.update" type="checkbox" class="vertical-align-middle ml-1 rounded p-2 border-light-gray fs-0_8r" placeholder="" id="butor-Edit-Role-Update" autocomplete="off" />
+                        </div>
+                    </div>
+                </form>
+                <div class="p-3 border-bottom border-light-gray d-flex justify-content-end">
+                    <button class="border-0 px-3 py-2 mdc-ripple-surface mx-1" onclick="hideModal('EditButor')">
+                        Cancel
+                    </button>
+                    <button class="border-0 bg-success text-white px-3 py-2 mdc-ripple-surface" onclick="butor.edit()">
+                        Add
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="DeleteButor" class="modal fade hide">
+    <div class="col-12 d-flex justify-content-center py-5">
+        <div class="col-4 modal-dialog bg-white p-0 rounded shadow">
+            <div class="modal-content">
+                <div class="p-3 border-bottom border-light-gray d-flex justify-content-between">
+                    <span>Remove Contributor </span>
+                    <i class="mdc-ripple-surface material-icons cursor-pointer" onclick="hideModal('DeleteButor')">clear</i>
+                </div>
+                <div class="col-12 p-3 fs-0_8r">
+                    Are you sure you want to remove this Contributor?
+                </div>
+                <div class="col-12 d-flex justify-content-end p-3">
+                    <button class="border-0 bg-success px-2 mx-1 text-white px-3 py-2" onclick="butor.delete()">
+                        Delete
+                    </button>
+                    <button class="border-0 bg-danger px-2 mx-1 text-white px-3 py-2" onclick="hideModal('DeleteButor')">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/assets/js/contributor.js"></script>

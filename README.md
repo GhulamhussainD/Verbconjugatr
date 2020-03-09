@@ -1,2 +1,1 @@
-# Verbconjugatr
-Verbconjugator
+Balochi Verb Conjugator
